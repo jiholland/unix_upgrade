@@ -6,7 +6,7 @@ Upgrade all packages and reboot if required.
 Requirements
 ------------
 
-[Community General Collection](https://galaxy.ansible.com/community.general)
+[Community General Collection](https://galaxy.ansible.com/community/general)
 
 Role Variables
 --------------
