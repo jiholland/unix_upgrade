@@ -1,0 +1,40 @@
+---
+# tasks file for unix_upgrade
+
+- name: upgrade all packages to latest
+  # noqa package-latest
+  tags: [upgrade, reboot]
+  ansible.builtin.dnf:
+    name: '*'
+    state: latest
+  become: true
+  register: upgrade_output
+  notify: print upgrade result
+
+- name: make sure dnf-utils is present
+  tags: [upgrade, reboot]
+  ansible.builtin.dnf:
+    name: dnf-utils
+    state: present
+  become: true
+
+- name: check if reboot is required
+  tags: [upgrade, reboot]
+  ansible.builtin.command:
+    cmd: needs-restarting -r
+  become: true
+  register: reboot_reg
+  failed_when: false
+  changed_when: false
+
+- name: print reboot status
+  tags: [upgrade, reboot]
+  ansible.builtin.debug:
+    msg: Reboot is nessessary
+  when: reboot_reg.rc == 1
+
+- name: reboot
+  tags: reboot
+  ansible.builtin.reboot:
+  become: true
+  when: reboot_reg.rc == 1

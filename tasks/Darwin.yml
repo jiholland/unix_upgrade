@@ -1,0 +1,11 @@
+---
+# tasks file for unix_upgrade
+
+- name: upgrade homebrew and upgrade all packages
+  tags: upgrade
+  community.general.homebrew:
+    update_homebrew: true
+    upgrade_all: true
+    state: present
+  register: upgrade_output
+  notify: print upgrade result

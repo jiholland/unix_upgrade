@@ -1,0 +1,28 @@
+---
+galaxy_info:
+  role_name: linux_upgrade
+  author: Jørn Ivar Holland
+  description: Upgrade all packages and reboot if required
+  license: BSD-3-Clause
+  min_ansible_version: 2.9
+  platforms:
+    - name: EL
+      versions:
+        - 8
+    - name: Debian
+      versions:
+        - buster
+    - name: macOS
+      versions:
+        - Big-Sur
+  galaxy_tags:
+    - rhel
+    - debian
+    - macos
+    - apt
+    - dnf
+    - homebrew
+    - upgrade
+
+
+dependencies: []

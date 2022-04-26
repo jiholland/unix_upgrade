@@ -1,0 +1,6 @@
+---
+# handler files for unix_upgrade
+
+- name: print upgrade result
+  ansible.builtin.debug:
+    var: upgrade_output
