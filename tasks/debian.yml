@@ -9,8 +9,6 @@
     update_cache: true
     state: latest
   become: true
-  register: upgrade_output
-  notify: print upgrade result
 
 - name: make sure debian-goodies are present
   tags: [upgrade, reboot]

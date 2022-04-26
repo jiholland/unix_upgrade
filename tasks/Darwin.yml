@@ -7,5 +7,3 @@
     update_homebrew: true
     upgrade_all: true
     state: present
-  register: upgrade_output
-  notify: print upgrade result

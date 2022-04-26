@@ -8,8 +8,6 @@
     name: '*'
     state: latest
   become: true
-  register: upgrade_output
-  notify: print upgrade result
 
 - name: make sure dnf-utils is present
   tags: [upgrade, reboot]
