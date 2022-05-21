@@ -22,7 +22,6 @@ Example Playbook
 ----------------
 
     ---
-    # ansible-playbook playbook_unix_upgrade.yml -e "target=localhost" --ask-become-pass
     - name: upgrade all packages and reboot if required
       hosts: "{{ target }}"
       gather_facts: true
