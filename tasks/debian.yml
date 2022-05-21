@@ -26,12 +26,6 @@
   failed_when: false
   changed_when: false
 
-- name: print reboot status
-  tags: [upgrade, reboot]
-  ansible.builtin.debug:
-    msg: Reboot is nessessary
-  when: reboot_reg.rc == 1
-
 - name: reboot
   tags: reboot
   ansible.builtin.reboot:
