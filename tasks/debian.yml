@@ -30,4 +30,4 @@
   tags: reboot
   ansible.builtin.reboot:
   become: true
-  when: reboot_reg.rc == 1
+  when: "'restart' in reboot_reg.stdout"

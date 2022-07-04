@@ -3,4 +3,4 @@
 
 - name: include task
   tags: [upgrade, reboot]
-  ansible.builtin.include_tasks: "{{ ansible_facts.os_family }}.yml"
+  ansible.builtin.include_tasks: "{{ ansible_facts.os_family | lower }}.yml"

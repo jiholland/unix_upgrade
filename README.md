@@ -25,7 +25,6 @@ Example Playbook
     - name: upgrade all packages and reboot if required
       hosts: "{{ target }}"
       gather_facts: true
-      gather_subset: min
 
       roles:
         - unix_upgrade
